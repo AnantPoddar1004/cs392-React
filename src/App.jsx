@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import logo from './logo.svg';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Banner from './components/Banner';
 import CourseList from './components/CourseList';
 import './App.css';
@@ -38,10 +39,15 @@ const schedule = {
 /*  display the banner component which takes schedule as a prop */
 const App = () => {
   return (
-    <div>
+    <div className ="container">
       <Banner schedule={schedule} />
 
-      <CourseList courses={schedule.courses}/>
+      <div className="course-list">
+      {
+        Object.entries(schedule.courses).map(([course, details]) => <CourseList details={details}/>)
+      }
+      </div>
+      
     </div>
   );
 };
