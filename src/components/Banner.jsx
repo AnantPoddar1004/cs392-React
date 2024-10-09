@@ -1,6 +1,6 @@
-const Banner = ({schedule}) => (
+const Banner = ({title}) => (
     <div>
-      <h1>{schedule.title}</h1>
+      <h1>{title}</h1>
     </div>
   );
 
