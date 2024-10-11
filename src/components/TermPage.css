@@ -1,0 +1,35 @@
+.button-general {
+    background-color: #ddd;
+    color: black;
+    border: 1px solid black;
+    padding: 5px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+
+.button-selected {
+    background-color: lightgreen;
+    color: black;
+  }
+
+.button-passive {
+    background-color: lightgrey;
+    color: black;
+  }
+
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.course-card-footer {
+    margin-top: auto;
+}
+
+.course-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 50%));
+  align-items: stretch;
+  grid-auto-rows: minmax(max-content, 100px);
+}
