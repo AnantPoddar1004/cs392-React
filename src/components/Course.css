@@ -1,0 +1,14 @@
+.card {
+    background-color:white;
+    color: black;
+  }
+
+.selected {
+    background-color: lightgreen;
+    color: black;
+}
+
+.not-selected {
+    background-color: white;
+    color: black;
+}

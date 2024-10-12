@@ -16,15 +16,6 @@
 .button-passive {
     background-color: lightgrey;
     color: black;
-  }
-
-.card {
-    display: flex;
-    flex-direction: column;
-}
-
-.course-card-footer {
-    margin-top: auto;
 }
 
 .course-list {
