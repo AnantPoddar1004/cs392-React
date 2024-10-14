@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { CourseList } from "./TermSelector";
 
-const CoursePage = ({courses, term}) => {
-  const [selected, setSelected] = useState([]);
+const CoursePage = ({courses, term, selected, setSelected}) => {
 
   const toggleSelected = (item) => setSelected(
     selected.includes(item)

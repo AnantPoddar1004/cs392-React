@@ -7,7 +7,7 @@ const TermSelector = ({ term, setTerm }) => {
   return (
     <div>
       {terms.map(value => (
-        <button key={value} className={`button-general ${value === term ? "button-selected" : "button-passive"}`} onClick={() => setTerm(value)}>
+        <button key={value} className={`${value === term ? "button-selected" : "button-general"}`} onClick={() => setTerm(value)}>
           {value}
         </button>
       ))}

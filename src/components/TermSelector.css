@@ -11,16 +11,17 @@
 .button-selected {
     background-color: lightgreen;
     color: black;
+    border: 1px solid black;
+    padding: 5px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 10px;
   }
 
-.button-passive {
-    background-color: lightgrey;
-    color: black;
-}
 
 .course-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(14rem, 50%));
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 25%));
   align-items: stretch;
-  grid-auto-rows: minmax(max-content, 100px);
+  grid-auto-rows: minmax(max-content, 225px);
 }

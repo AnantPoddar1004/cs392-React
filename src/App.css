@@ -48,4 +48,21 @@ button {
   grid-auto-rows: minmax(max-content, 100px);
 } */
 
+.courseplan-button {
+  background-color: powderblue;
+  color: black;
+  border: 1px solid black;
+  padding: 5px 20px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-left: auto;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 
