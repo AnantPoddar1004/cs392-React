@@ -3,14 +3,12 @@ import React, { useState } from 'react';
 
 const CoursePlan = ({ coursedata, selected }) => {
     if (selected.length === 0){
-        console.log("No courses selected!")
         return <p>No courses selected! Click on a course to select it.</p>;
     }
     else {
-        console.log("Courses selected!")
         return(
             <div>
-                <ul>
+                <ul style={{ textAlign: 'left' }}>
                     {selected.map((course) => (
                         <li><p><b>{coursedata[course].term} CS {coursedata[course].number} : </b> {coursedata[course].title} ({coursedata[course].meets})</p></li>
                     ))}

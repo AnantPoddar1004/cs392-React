@@ -23,7 +23,7 @@ const CourseList = ({courses, term, selected, toggleSelected}) => {
   return(
     <div className="course-list">
       {Object.entries(filtered_courses).map(([course, details]) => (
-        <Course course={course} details={details} selected={selected} toggleSelected={toggleSelected}/>
+        <Course course={course} details={details} selected={selected} toggleSelected={toggleSelected} coursedata={courses}/>
       ))}
     </div>
   );

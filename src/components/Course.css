@@ -8,7 +8,17 @@
     color: black;
 }
 
-.not-selected {
+.selectable {
     background-color: white;
     color: black;
+}
+
+.unselectable {
+    background-color: white;
+    color: lightgray;
+    border-color: lightgray;
+}
+
+.card-footer {
+    background-color: transparent;
 }
