@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
 
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useJsonQuery } from './utilities/fetch';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -9,9 +9,12 @@ import Banner from './components/Banner';
 import { TermSelector } from './components/TermSelector';
 import { CoursePage } from './components/CourseSelector';
 import { Modal } from './components/Modal';
+import { useNavigate } from 'react-router-dom';
+import { CourseForm } from './components/CourseForm';
 import './App.css';
 
 const url = "https://courses.cs.northwestern.edu/394/guides/data/cs-courses.php";
+
 
 
 const Main = () => {
@@ -29,25 +32,35 @@ const Main = () => {
   if (isLoading) return <h1>Loading user data...</h1>;
   if (!data) return <h1>No user data found</h1>;
 
+  console.log(data);
 
   return (
-    <div className ="App">
-      
-      <Banner title={data.title} />
-
-      <div className="flex-container">
-        <TermSelector term={term} setTerm={setTerm}/>
-
-        <button className="courseplan-button" onClick={openModal}>Course Plan</button>
-      </div>
-
-      <Modal coursedata={data.courses} selected={selected} open={open} close={closeModal}>
-        <p>Pop Up Opened!</p>
-      </Modal>
-
-      <CoursePage courses={data.courses} term={term} selected={selected} setSelected={setSelected}/>
-
-    </div>
+    <BrowserRouter> 
+      <Routes>
+        <Route path="/" element={
+          <div className="container"> 
+          <div className ="App">
+            
+            <Banner title={data.title} />
+    
+            <div className="flex-container">
+              <TermSelector term={term} setTerm={setTerm}/>
+    
+              <button className="courseplan-button" onClick={openModal}>Course Plan</button>
+            </div>
+    
+            <Modal coursedata={data.courses} selected={selected} open={open} close={closeModal}>
+              <p>Pop Up Opened!</p>
+            </Modal>
+    
+            <CoursePage courses={data.courses} term={term} selected={selected} setSelected={setSelected}/>
+    
+          </div>
+        </div>
+        } />
+        <Route path="/course/:id" element={<CourseForm courses={data.courses}/>} />
+      </Routes>
+      </BrowserRouter>
   );
 }
 
@@ -57,10 +70,8 @@ const queryClient = new QueryClient();
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
-    <div className="container">
-      <Main />
-    </div>
-  </QueryClientProvider>
+      {<Main />}
+    </QueryClientProvider>
   )
 };
 
