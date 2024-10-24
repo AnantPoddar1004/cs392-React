@@ -32,7 +32,6 @@ const Main = () => {
   if (isLoading) return <h1>Loading user data...</h1>;
   if (!data) return <h1>No user data found</h1>;
 
-  console.log(data);
 
   return (
     <BrowserRouter> 
