@@ -12,6 +12,7 @@ import { Modal } from './components/Modal';
 import { useNavigate } from 'react-router-dom';
 import { CourseForm } from './components/CourseForm';
 import { useDbData } from './utilities/firebase';
+import { Navigation } from './components/Navigation';
 import './App.css';
 
 const url = "https://courses.cs.northwestern.edu/394/guides/data/cs-courses.php";
@@ -37,9 +38,10 @@ const Main = () => {
 
   return (
     <BrowserRouter> 
+      <div className="container">
+      <Navigation />
       <Routes>
         <Route path="/" element={
-          <div className="container"> 
           <div className ="App">
             
             <Banner title={data.title} />
@@ -57,10 +59,10 @@ const Main = () => {
             <CoursePage courses={data.courses} term={term} selected={selected} setSelected={setSelected}/>
     
           </div>
-        </div>
         } />
         <Route path="/course/:id" element={<CourseForm courses={data.courses}/>} />
       </Routes>
+      </div>
       </BrowserRouter>
   );
 }
