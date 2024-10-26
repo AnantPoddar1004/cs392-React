@@ -11,15 +11,17 @@ import { CoursePage } from './components/CourseSelector';
 import { Modal } from './components/Modal';
 import { useNavigate } from 'react-router-dom';
 import { CourseForm } from './components/CourseForm';
+import { useDbData } from './utilities/firebase';
 import './App.css';
 
 const url = "https://courses.cs.northwestern.edu/394/guides/data/cs-courses.php";
+const path = "/";
 
 
 
 const Main = () => {
 
-  const [data, isLoading, error] = useJsonQuery(url);
+  const [data, error] = useDbData(path);
 
   const [term, setTerm] = useState("Fall");
   const [selected, setSelected] = useState([]);
@@ -29,7 +31,7 @@ const Main = () => {
   const closeModal = () => setOpen(false);
 
   if (error) return <h1>Error loading user data: {`${error}`}</h1>;
-  if (isLoading) return <h1>Loading user data...</h1>;
+  // if (isLoading) return <h1>Loading user data...</h1>;
   if (!data) return <h1>No user data found</h1>;
 
 
