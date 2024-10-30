@@ -74,3 +74,9 @@ export const useAuthState = () => {
 
   return [user];
 };
+
+export const useProfile = () => {
+  const [user] = useAuthState();
+  const [isAdmin, error] =  useDbData(`/admins/${user?.uid || 'guest'}`);
+  return [{ user, isAdmin }, error];
+};
