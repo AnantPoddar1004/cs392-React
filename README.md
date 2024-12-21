@@ -1,4 +1,4 @@
-# React Vitest Template
+# CS Course Scheduler - React Vitest Framework
 
 ## Usage
 
