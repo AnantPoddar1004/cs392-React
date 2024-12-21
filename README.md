@@ -11,23 +11,6 @@ npm install
 If the third step hangs after printing ``> cloned criesbeck/react-vitest#HEAD``, 
 just control-C to exit then run ``npm install``.
 
-## Test
-
-Verify that the initial app works. Run
-
-```
-npm start
-```
-
-and open the URL displayed.
-
-Verify that the unit tests work with
-
-```
-npm test
-```
-
-Two tests should run and pass. 
 
 ## Scripts
 
@@ -42,10 +25,6 @@ Two tests should run and pass.
 | npm test         | Starts a Jest-like test loop                        |
 | npm run coverage | Runs the tests, displays code coverage results      |
 
-
-## Git
-
-If everything is working, set up [your local and remote repositories](https://docs.github.com/en/get-started/importing-your-projects-to-github/importing-source-code-to-github/adding-locally-hosted-code-to-github#adding-a-local-repository-to-github-using-git).
 
 ## Folder Structure
 
