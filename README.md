@@ -1,4 +1,12 @@
-# CS Course Scheduler - React Vitest Framework
+# CS Course Scheduler 
+
+Link to website - https://cs-392-react-app.web.app/
+
+## React Vitest Framework
+
+The web application uses a React-powered component-driven UI integrated with Vitest uit testing framework. It is built on top of Vite, a fast-paced development server which is commonly used for modern frontend development. The React framework helps structure code into component and utility modeules, allowing for resuability and iterative devlopment. It provides support for HTML and has features like state and effect to render interactive components. 
+
+## Firebase 
 
 ## Usage
 
